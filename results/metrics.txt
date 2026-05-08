@@ -1,1 +1,41 @@
+Model: YOLOv8n
+Project: Real-Time PPE Detection Using Computer Vision
 
+Dataset:
+SH17 Dataset for PPE Detection
+
+Classes:
+- person
+- helmet
+- vest
+
+Training Configuration:
+Epochs: 25
+Image Size: 640
+Batch Size: 16
+
+Evaluation Metrics:
+Precision: ~1.00 peak precision during training
+Recall: ~0.45 peak recall
+mAP50: ~0.13
+mAP50-95: ~0.10
+
+Observations:
+- The model successfully detected workers and PPE equipment in validation images.
+- Training loss decreased over time, indicating the model learned object features.
+- Detection accuracy was limited by dataset size and training duration.
+- Some false negatives occurred for helmets and safety vests.
+
+Challenges:
+- Small dataset size
+- Limited GPU training time
+- Class imbalance in PPE categories
+
+Potential Improvements:
+- Train for more epochs
+- Use YOLOv8m or YOLOv8l
+- Add more labeled PPE images
+- Apply data augmentation techniques
+
+Inference:
+The model was able to perform object detection and generate bounding boxes on validation images using YOLOv8.
